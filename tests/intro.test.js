@@ -1,5 +1,5 @@
 import { describe, test, it, expect } from "vitest";
-import {max} from "../src/intro";
+import {calculateAverage, max} from "../src/intro";
 
 describe ('max', () => {
     it('Should return the first argument if it is greater', () => {
@@ -23,4 +23,22 @@ describe ('max', () => {
     it('Should return the first argument if arguments are equal', ()=>{
         expect(max(1,1)).toBe(1);
     })
-});
+})
+
+describe ('calculateAveragee', () => {
+    it('should return NaN if given an empty array', () => {
+        expect(calculateAverage([])).toBe(NaN);
+    });
+
+    it('should calculate the average of an array with a single element', () => {
+        expect(calculateAverage([1])).toBe(1);
+    });
+
+    it('should calculate the average of an array with a two element', () => {
+        expect(calculateAverage([1, 2])).toBe(1.5);
+    });
+
+    it('should calculate the average of an array with a two element', () => {
+        expect(calculateAverage([1, 2, 3])).toBe(2);
+    });
+})
